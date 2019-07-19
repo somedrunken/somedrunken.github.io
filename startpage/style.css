@@ -15,7 +15,7 @@ h3 {
 h1 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
-  color: #000000;
+ 
   font-size: 90;
 }
 
@@ -43,16 +43,16 @@ list {
 .title {
   text-align: center;
   width: 12em;
-  color: #f2f2f2;
+  
   
 }
 
 
 .links {
   text-align: left;
-  color: #f2f2f2;
+ 
   font-family: 'Open Sans Condensed', sans-serif;
-  text-decoration: none;
+  
   font-weight: bold;
    width: 12em;
 }
