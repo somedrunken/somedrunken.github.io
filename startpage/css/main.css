@@ -45,7 +45,7 @@ body {
 }
 
 .list:hover {
-    color: black;
+    color: red;
 }
 /* Create four equal columns that floats next to each other */
 .column {
