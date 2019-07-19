@@ -38,8 +38,8 @@ body {
 
 /* Style the topnav links */
 .list {
-   color: #f2f2f2;
-  text-align: center;
+  color: black;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
 }
