@@ -36,10 +36,10 @@ body {
   color: black;
 }
 
-/* Create three equal columns that floats next to each other */
+/* Create four equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
+  width: 25%;
   padding: 15px;
 }
 
