@@ -50,10 +50,10 @@ list {
 
 .links {
   text-align: left;
-  color: #f2f2f2;
+  //color: #f2f2f2;
   font-family: 'Open Sans Condensed', sans-serif;
   text-decoration: none;
   font-weight: bold;
-  background-color: #262626;
+ <!-- background-color: #262626;-->
   width: 12em;
 }
