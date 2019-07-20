@@ -22,7 +22,7 @@ h1 {
 
 links a {
   color: white;
-   
+  text-decoration: none;  
 }
 
 links a:hover{
@@ -30,7 +30,7 @@ colour:yellow }
 
 list {
   text-align: center;
-  
+   text-decoration: none;
 }
 
 .all {
