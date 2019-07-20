@@ -20,13 +20,6 @@ h1 {
   font-size: 90;
 }
 
-links a {
-  color: inherit;
-  text-decoration: none;  
-}
-
-links a:hover{
-colour:yellow }
 
 list {
   text-align: center;
@@ -61,3 +54,11 @@ list {
   background-color: #262626;
   width: 12em;
 }
+
+.links a {
+  color: inherit;
+  text-decoration: none;  
+}
+
+.links a:hover{
+colour:yellow }
