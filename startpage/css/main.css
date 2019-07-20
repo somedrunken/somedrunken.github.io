@@ -21,7 +21,7 @@ h1 {
 }
 
 links a {
-  color: white;
+  color: inherit;
   text-decoration: none;  
 }
 
