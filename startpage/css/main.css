@@ -55,10 +55,10 @@ list {
   width: 12em;
 }
 
-.links a {
+a {
   color: inherit;
   text-decoration: none;  
 }
 
-.links a:hover{
-colour:yellow }
+a:hover{
+background colour:yellow; }
