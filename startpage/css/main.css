@@ -56,10 +56,10 @@ list {
 }
 
 a {
-  color: yellow;
+  color: inherit;
   text-decoration: none;  
 }
 
 a:hover {
-color: white; }
+color: yellow; }
 
