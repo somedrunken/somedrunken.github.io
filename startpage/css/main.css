@@ -8,11 +8,11 @@ body {
 
 h3 {
   
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Cormorant', sans-serif;
 }
 
 h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Cormorant', sans-serif;
   text-align: center;
   color: white;
   font-size: 90;
@@ -46,7 +46,7 @@ list {
 .links {
   text-align: center;
   color: white;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Cormorant', sans-serif;
   text-decoration: none;
   font-weight: bold;
   background-color: #262626;
