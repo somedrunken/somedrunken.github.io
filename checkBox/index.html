@@ -3,34 +3,215 @@
 <html lang="en-US">
 
 
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!-->
+
+<!--<![endif]-->
+
 <head>
+  <meta charset="utf-8">
+ <style>
+           
+           
+  body
+{
+	margin:0;
+	padding:0;
+	font:16px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background:#555;
+}
+h2
+{
+  text-align:center;
+  color:#fff;
+}
+#menu-wrapper
+{
+	position:relative;
+	height:40px;
+	padding:10px;
+	text-align:center;
+	list-style:none;
+	margin:0;
+	z-index:50;
+}
 
-<style>
+#menu-wrapper li
+{
+	background : -webkit-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
+	background : -moz-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
+	background : -o-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
+	background : -ms-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%); 
+	background : -linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
+	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:solid 1px #00416c;
+	
+	display:inline-block;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-$color:rgb(random(150)
-          ,random(150)
-          ,random(150));
+#menu-wrapper li:hover
+{
+	background : -webkit-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
+	background : -moz-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
+	background : -o-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
+	background : -ms-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%); 
+	background : -linear-gradient(top, rgb(0, 113, 188) 00%, (0, 96, 156) 100%);
+}
 
-figure{width:200px;height:60px;cursor:pointer;perspective:500px;-webkit-perspective:500px;}
-figure div{height:100%;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:0.25s;-webkit-transition:0.25s;}
-figure:hover div{transform:rotateX(-90deg);}
-span{width:100%;height:100%;position:absolute;box-sizing:border-box;border:5px solid #fff;font-family:'Source Sans Pro',sans-serif;line-height:50px;font-size:17pt;text-align:center;text-transform:uppercase;}
-span:nth-child(1){color:#fff;transform: translate3d(0, 0, 30px);-webkit-transform: translate3d(0, 0, 30px);}
-span:nth-child(2){color:$color;background:#fff;transform: rotateX(90deg) translate3d(0, 0, 30px);-webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);}
+#menu-wrapper li a
+{
+	display:block;
+	text-decoration:none;
+	padding:10px;
+	color:#fff;
+	font-weight:600;
+}
 
-body{background:$color;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);margin:0;}
+#menu-wrapper li a:hover
+{
+	color:#ff8000;
+}
 
-</style>
+/* sub menu styles */
+#menu-wrapper ul
+{
+	position:absolute;
+	padding:1px 0 0 0;
+	margin-top:1px;
+	text-align:left;
+	overflow:hidden;
+	border-radius:5px;
+}
+
+#menu-wrapper ul li
+{
+	position:relative;
+	list-style: none;
+	display: list-item;
+	border-radius: 0;
+	border: none;
+	background:#0065A8;
+}
+
+#menu-wrapper ul li:hover
+{
+	background:#005289;
+}
+
+/** INTERNET EXPLORER 9 AND OLDER BACKGROUND FIXES **/
+.lte9 #menu-wrapper li
+{
+	background-image:url('../img/fondo-boton-ie9lt.png');/*insert your image here*/
+	background-repeat:repeat-x;
+}
+
+.lte9 #menu-wrapper li:hover
+{
+	background-image:url('../img/fondo-boton-ie9lt-hover.png');/*insert your image here*/
+	background-repeat:repeat-x;
+}
+
+.lte9 #menu-wrapper ul
+{
+	margin-left:-1px;
+}
+
+.lte9 #menu-wrapper ul li
+{
+	background:#0065A8;
+}
+
+.lte9 #menu-wrapper ul li:hover
+{
+	background:#005289;
+}
+
+/** IE7 MENU ITEM DISPLAY AND SPACING FIX **/
+.lte7 #menu-wrapper li
+{
+	display:inline;
+	margin-right:5px;
+}
+
+.lte7 #menu-wrapper ul
+{
+	position:absolute;
+	text-align:left;
+	overflow:hidden;
+}
+
+.lte7 #menu-wrapper ul li
+{
+	display:list-item;
+	margin-bottom:-3px;
+}         
+ 
+ </style>
+                
 </head>
 
 <body>
-<figure>
-  <div>
-    <span>Hover Me</span>
-    <span>Button</span>
-  </div>
-</figure>
+  <h2>
+    Simple Drop Down Menu<br>
+    Powered by Greensock Animation Platform
+  </h2>
+  <!-- MENU START -->
+  <ul id="menu-wrapper">
+    <li class="menu-item" id="li1">
+      <a href="#">About us</a>
+      <ul id="ul1" class="sub-menu">
+        <li><a class="menuLink" href="#">Our History</a></li>
 
+        <li><a class="menuLink" href="#">Our Mission</a></li>
+
+        <li><a class="menuLink" href="#">Our Team</a></li>
+      </ul>
+    </li>
+    <li class="menu-item"><a class="menuLink" href="#">What we do</a></li>
+
+    <li class="menu-item"><a class="menuLink" href="#">Business Training</a></li>
+
+    <li class="menu-item">
+      <a href="#">Contact</a>
+      <ul class="sub-menu">
+        <li><a class="menuLink" href="#">Contact Form</a></li>
+
+        <li><a class="menuLink" href="#">Location Map</a></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- MENU END -->
+  <div id="clear-fix1"></div>
+          
+ <script>
+  const indicator = document.querySelector('.nav-indicator');
+const items = document.querySelectorAll('.nav-item');
+function handleIndicator(el) {
+  items.forEach(item => {
+    item.classList.remove('is-active');
+    item.removeAttribute('style');
+  });
+  
+  indicator.style.width = `${el.offsetWidth}px`;
+  indicator.style.left = `${el.offsetLeft}px`;
+  indicator.style.backgroundColor = el.getAttribute('active-color');
+  el.classList.add('is-active');
+  el.style.color = el.getAttribute('active-color');
+}
+items.forEach((item, index) => {
+  item.addEventListener('click', (e) => { handleIndicator(e.target)});
+  item.classList.contains('is-active') && handleIndicator(item);
+});         
+           
+           
+          </script>
 </body>
+
+
 </html>
