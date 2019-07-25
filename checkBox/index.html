@@ -2,17 +2,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-
-<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
-<!--[if gt IE 9]>  <html> <![endif]-->
-<!--[if !IE]><!-->
-
-<!--<![endif]-->
-
 <head>
-  <meta charset="utf-8">
+
  <style>
            
            
@@ -104,54 +95,6 @@ h2
 	background:#005289;
 }
 
-/** INTERNET EXPLORER 9 AND OLDER BACKGROUND FIXES **/
-.lte9 #menu-wrapper li
-{
-	background-image:url('../img/fondo-boton-ie9lt.png');/*insert your image here*/
-	background-repeat:repeat-x;
-}
-
-.lte9 #menu-wrapper li:hover
-{
-	background-image:url('../img/fondo-boton-ie9lt-hover.png');/*insert your image here*/
-	background-repeat:repeat-x;
-}
-
-.lte9 #menu-wrapper ul
-{
-	margin-left:-1px;
-}
-
-.lte9 #menu-wrapper ul li
-{
-	background:#0065A8;
-}
-
-.lte9 #menu-wrapper ul li:hover
-{
-	background:#005289;
-}
-
-/** IE7 MENU ITEM DISPLAY AND SPACING FIX **/
-.lte7 #menu-wrapper li
-{
-	display:inline;
-	margin-right:5px;
-}
-
-.lte7 #menu-wrapper ul
-{
-	position:absolute;
-	text-align:left;
-	overflow:hidden;
-}
-
-.lte7 #menu-wrapper ul li
-{
-	display:list-item;
-	margin-bottom:-3px;
-}         
- 
  </style>
                 
 </head>
@@ -187,31 +130,70 @@ h2
     </li>
   </ul>
   <!-- MENU END -->
-  <div id="clear-fix1"></div>
+ <div id="clear-fix1"></div>
           
- <script>
-  const indicator = document.querySelector('.nav-indicator');
-const items = document.querySelectorAll('.nav-item');
-function handleIndicator(el) {
-  items.forEach(item => {
-    item.classList.remove('is-active');
-    item.removeAttribute('style');
-  });
-  
-  indicator.style.width = `${el.offsetWidth}px`;
-  indicator.style.left = `${el.offsetLeft}px`;
-  indicator.style.backgroundColor = el.getAttribute('active-color');
-  el.classList.add('is-active');
-  el.style.color = el.getAttribute('active-color');
+<script>
+var subMenus = $(".sub-menu");
+
+$.each($(".menu-item"), function(index, element) {
+	var subMenu = $(element).children('ul'),
+      tl;
+	
+	if(subMenu.length != 0) {
+		tl = new TimelineLite({paused:true});
+		
+		tl.from(subMenu, .2, {height:0});
+		
+		element.subMenuAnimation = tl;
+		
+		$(element).hover(menuItemOver, menuItemOut);
+	} 
+});
+
+function menuItemOver(e) {
+  this.subMenuAnimation.play();
 }
-items.forEach((item, index) => {
-  item.addEventListener('click', (e) => { handleIndicator(e.target)});
-  item.classList.contains('is-active') && handleIndicator(item);
-});         
-           
-           
-          </script>
+
+function menuItemOut() {
+	this.subMenuAnimation.reverse();
+}
+
+/*
+==>FUNCTION TO FIX LI ITEMS WIDTH IN IE7
+*/
+function setWidth() {
+	//this function executes only if the browser is IE7
+	if($("html").hasClass('lte7'))
+	{
+		//because of a bug with IE7 we need to calculate any element's width before the li's elements width
+		console.log($('div#clear-fix1').width());
+		
+		//we loop through the subMenu elements
+		$.each(subMenus, function(index, element)
+		{
+			var subMenuChildren = $(element).children('li'),
+          elemWidths = [],
+          maxWidth;
+			
+			//loop through all the child elements of the current subMenu
+			$.each(subMenuChildren, function()
+			{
+				elemWidths.push($(this).outerWidth());
+			})//sub menu children loop END
+			
+			//we get the biggest width
+			maxWidth = Math.max.apply(null, elemWidths);
+			
+			//apply the biggest width to all the elements
+			subMenuChildren.css('width',maxWidth);
+			
+		});//sub menu elements loop END
+		
+	}//IE7 conditional END
+	
+}
+
+setWidth();
+</script>
 </body>
-
-
 </html>
