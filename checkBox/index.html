@@ -3,243 +3,87 @@
 <html lang="en-US">
 
 <head>
+<style>
+	* { margin: 0; padding: 0; }
 
- <style>
- body
-{
-	margin:0;
-	padding:0;
-	font:16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	background:#555;
-}
-h2
-{
-  text-align:center;
-  color:#fff;
-}
-#menu-wrapper
-{
-	position:relative;
-	height:40px;
-	padding:10px;
-	text-align:center;
-	list-style:none;
-	margin:0;
-	z-index:50;
+@mixin flex($jc: true, $ai: true) {
+	display: flex; 
+	@if $jc { justify-content: center; }
+	@if $ai { align-items: center; }
 }
 
-#menu-wrapper li
-{
-	background : -webkit-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
-	background : -moz-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
-	background : -o-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
-	background : -ms-linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%); 
-	background : -linear-gradient(top, rgb(0, 96, 156) 00%, rgb(0, 113, 188) 100%);
+body { @include flex; width: 100vw; height: 100vh; }
+
+nav {
+	@include flex(false); position: relative;
+	width: 50%; height: 8vh;
+	border: 1px solid blue;
+}
+
+
+.navbar {
+	$children: 11; /* Number of children elements + 1*/
+	$duration: 125; /* Duration of animation per child */
 	
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:solid 1px #00416c;
-	
-	display:inline-block;
-}
-
-#menu-wrapper li:hover
-{
-	background : -webkit-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
-	background : -moz-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
-	background : -o-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%);
-	background : -ms-linear-gradient(top, rgb(0, 113, 188) 00%, rgb(0, 96, 156) 100%); 
-	background : -linear-gradient(top, rgb(0, 113, 188) 00%, (0, 96, 156) 100%);
-}
-
-#menu-wrapper li a
-{
-	display:block;
-	text-decoration:none;
-	padding:10px;
-	color:#fff;
-	font-weight:600;
-}
-
-#menu-wrapper li a:hover
-{
-	color:#ff8000;
-}
-
-/* sub menu styles */
-#menu-wrapper ul
-{
-	position:absolute;
-	padding:1px 0 0 0;
-	margin-top:1px;
-	text-align:left;
-	overflow:hidden;
-	border-radius:5px;
-}
-
-#menu-wrapper ul li
-{
-	position:relative;
+	position: absolute;
+	top: 100%; left: 0; right: 0;
 	list-style: none;
-	display: list-item;
-	border-radius: 0;
-	border: none;
-	background:#0065A8;
+
+	* {
+		padding: 0.5em;
+		background: red;
+	}
+	
+	@for $i from 1 to $children {
+		$exp: '#{$i}';
+		> *:nth-child(#{$exp}) {
+			transform: scaleY(0);
+			transform-origin: top;
+			transition: transform ease;
+			transition-duration: $duration * 1ms;
+			transition-delay: 
+				calc(#{$duration} * #{$children - $i} * 1ms);
+		}
+	}
+
+	&--open {
+		@for $i from 1 to $children {
+			$exp: '#{$i}';
+			> *:nth-child(#{$exp}) {
+				transform: scaleY(1);
+				transform-origin: top;
+				transition: transform ease;
+				transition-duration: $duration * 1ms;
+				transition-delay: calc(#{$duration} * #{$i} * 1ms);
+			}
+		}
+	}
 }
 
-#menu-wrapper ul li:hover
-{
-	background:#005289;
-}
-
-/** INTERNET EXPLORER 9 AND OLDER BACKGROUND FIXES **/
-.lte9 #menu-wrapper li
-{
-	background-image:url('../img/fondo-boton-ie9lt.png');/*insert your image here*/
-	background-repeat:repeat-x;
-}
-
-.lte9 #menu-wrapper li:hover
-{
-	background-image:url('../img/fondo-boton-ie9lt-hover.png');/*insert your image here*/
-	background-repeat:repeat-x;
-}
-
-.lte9 #menu-wrapper ul
-{
-	margin-left:-1px;
-}
-
-.lte9 #menu-wrapper ul li
-{
-	background:#0065A8;
-}
-
-.lte9 #menu-wrapper ul li:hover
-{
-	background:#005289;
-}
-
-/** IE7 MENU ITEM DISPLAY AND SPACING FIX **/
-.lte7 #menu-wrapper li
-{
-	display:inline;
-	margin-right:5px;
-}
-
-.lte7 #menu-wrapper ul
-{
-	position:absolute;
-	text-align:left;
-	overflow:hidden;
-}
-
-.lte7 #menu-wrapper ul li
-{
-	display:list-item;
-	margin-bottom:-3px;
-}
-
- </style>
-                
+</style>
+	
 </head>
 
+
 <body>
-  <h2>
-    Sammm<br>
-    Powered by Greensock Animation Platform
-  </h2>
-  <!-- MENU START -->
-  <ul id="menu-wrapper">
-    <li class="menu-item" id="li1">
-      <a href="#">About us</a>
-      <ul id="ul1" class="sub-menu">
-        <li><a class="menuLink" href="#">Our History</a></li>
 
-        <li><a class="menuLink" href="#">Our Mission</a></li>
-
-        <li><a class="menuLink" href="#">Our Team</a></li>
-      </ul>
-    </li>
-    <li class="menu-item"><a class="menuLink" href="#">What we do</a></li>
-
-    <li class="menu-item"><a class="menuLink" href="#">Business Training</a></li>
-
-    <li class="menu-item">
-      <a href="#">Contact</a>
-      <ul class="sub-menu">
-        <li><a class="menuLink" href="#">Contact Form</a></li>
-
-        <li><a class="menuLink" href="#">Location Map</a></li>
-      </ul>
-    </li>
-  </ul>
-  <!-- MENU END -->
- <div id="clear-fix1"></div>
-          
+	nav
+	button(onclick="toggleNav(event)") Open
+	ul(class="navbar")
+		- for (var i = 0; i < 10; i++)
+			li Option #{i + 1}
+	
+	
 <script>
-var subMenus = $(".sub-menu");
-
-$.each($(".menu-item"), function(index, element) {
-	var subMenu = $(element).children('ul'),
-      tl;
+const toggleNav = e => {
+	const menu = document.querySelector('ul')
+	menu.classList.toggle('navbar--open')
+	e.target.innerHTML = e.target.innerHTML === 'Open' 
+		? 'Close' : 'Open'
+}
 	
-	if(subMenu.length != 0) {
-		tl = new TimelineLite({paused:true});
-		
-		tl.from(subMenu, .2, {height:0});
-		
-		element.subMenuAnimation = tl;
-		
-		$(element).hover(menuItemOver, menuItemOut);
-	} 
-});
-
-function menuItemOver(e) {
-  this.subMenuAnimation.play();
-}
-
-function menuItemOut() {
-	this.subMenuAnimation.reverse();
-}
-
-/*
-==>FUNCTION TO FIX LI ITEMS WIDTH IN IE7
-*/
-function setWidth() {
-	//this function executes only if the browser is IE7
-	if($("html").hasClass('lte7'))
-	{
-		//because of a bug with IE7 we need to calculate any element's width before the li's elements width
-		console.log($('div#clear-fix1').width());
-		
-		//we loop through the subMenu elements
-		$.each(subMenus, function(index, element)
-		{
-			var subMenuChildren = $(element).children('li'),
-          elemWidths = [],
-          maxWidth;
-			
-			//loop through all the child elements of the current subMenu
-			$.each(subMenuChildren, function()
-			{
-				elemWidths.push($(this).outerWidth());
-			})//sub menu children loop END
-			
-			//we get the biggest width
-			maxWidth = Math.max.apply(null, elemWidths);
-			
-			//apply the biggest width to all the elements
-			subMenuChildren.css('width',maxWidth);
-			
-		});//sub menu elements loop END
-		
-	}//IE7 conditional END
 	
-}
-
-setWidth();
+	
 </script>
 </body>
 </html>
