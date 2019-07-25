@@ -5,9 +5,7 @@
 <head>
 
  <style>
-           
-           
-  body
+ body
 {
 	margin:0;
 	padding:0;
@@ -93,6 +91,54 @@ h2
 #menu-wrapper ul li:hover
 {
 	background:#005289;
+}
+
+/** INTERNET EXPLORER 9 AND OLDER BACKGROUND FIXES **/
+.lte9 #menu-wrapper li
+{
+	background-image:url('../img/fondo-boton-ie9lt.png');/*insert your image here*/
+	background-repeat:repeat-x;
+}
+
+.lte9 #menu-wrapper li:hover
+{
+	background-image:url('../img/fondo-boton-ie9lt-hover.png');/*insert your image here*/
+	background-repeat:repeat-x;
+}
+
+.lte9 #menu-wrapper ul
+{
+	margin-left:-1px;
+}
+
+.lte9 #menu-wrapper ul li
+{
+	background:#0065A8;
+}
+
+.lte9 #menu-wrapper ul li:hover
+{
+	background:#005289;
+}
+
+/** IE7 MENU ITEM DISPLAY AND SPACING FIX **/
+.lte7 #menu-wrapper li
+{
+	display:inline;
+	margin-right:5px;
+}
+
+.lte7 #menu-wrapper ul
+{
+	position:absolute;
+	text-align:left;
+	overflow:hidden;
+}
+
+.lte7 #menu-wrapper ul li
+{
+	display:list-item;
+	margin-bottom:-3px;
 }
 
  </style>
