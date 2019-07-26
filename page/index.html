@@ -84,7 +84,7 @@ body {
 </head>
 <body>
 <nav class="nav">
-  <a href="https://www.reddit.com/" class="nav-item is-active" active-color="orange">reddit</a>
+  <a href="https://www.reddit.com/" class="nav-item is-active" active-color="orange">!@#$reddit</a>
   <a href="https://github.com/" class="nav-item is-active" active-color="purple">github</a>
   <a href="https://www.ozbargain.com.au/" class="nav-item" active-color="green">ozbargin</a>
   <a href="https://distrowatch.com/" class="nav-item" active-color="red">distrowatch</a>
@@ -120,7 +120,7 @@ function handleIndicator(el) {
 
 
 items.forEach((item, index) => {
-  item.addEventListener('hover', (e) => { handleIndicator(e.target)});
+  item.addEventListener('onmouseover', (e) => { handleIndicator(e.target)});
   item.classList.contains('is-active') && handleIndicator(item);
 });
 
