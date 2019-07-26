@@ -83,8 +83,9 @@ body {
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="https://www.reddit.com/" class="nav-item is-active" active-color="orange">reddit</a>
+<ul class="nav">
+  <li><a href="https://www.reddit.com/" class="nav-item is-active" active-color="orange">reddit</a><ul>
+    <li><a href="https://www.reddit.com/unixporn">reddit</a></li></ul>
   <a href="https://github.com/" class="nav-item is-active" active-color="purple">github</a>
   <a href="https://www.ozbargain.com.au/" class="nav-item" active-color="green">ozbargin</a>
   <a href="https://distrowatch.com/" class="nav-item" active-color="red">distrowatch</a>
@@ -98,7 +99,7 @@ body {
   <a href="https://192.168.2.150:8006/#v1:0:=lxc%2F100:4:2:::::5" class="nav-item" active-color="blue">promox</a>
   
   <span class="nav-indicator"></span>
-</nav>
+</ul>
 
 <script>
 const indicator = document.querySelector('.nav-indicator');
