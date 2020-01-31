@@ -28,8 +28,19 @@ $(document).ready(function(){
 })
 
 
-// TEST SLIDESHOW
+$("#slideshow > div:gt(0)").hide();
 
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+
+// TEST SLIDESHOW
+/*
 var controls = document.querySelectorAll('.controls');
 for(var i=0; i<controls.length; i++){
 	controls[i].style.display = 'inline-block';
@@ -85,3 +96,4 @@ previous.onclick = function(){
 	pauseSlideshow();
 	previousSlide();
 };
+*/
