@@ -177,12 +177,28 @@ textarea {
 }
 
 
+/*Test*/
+
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 600px; 
+    height: 600px; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+
 /*------------TEST SLIDESHOW--------------------*/
 
 /*
-essential styles:
-these make the slideshow work
-*/
 #slides{
 	position: relative;
 	height: 100%;
@@ -217,11 +233,6 @@ these make the slideshow work
 }
 
 
-/*
-non-essential styles:
-just for appearance; change whatever you want
-*/
-
 .slide{
 	font-size: 40px;
 	padding: 40px;
@@ -232,19 +243,16 @@ just for appearance; change whatever you want
   background-size: cover;
 }
 
-/* http://unrestrictedstock.com/wp-content/uploads/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg */
 .slide:nth-of-type(1){
 	background-color: red;
   background-image: url('/store/Images/mudhut/Mudhut15.jpg');
 }
 
-/* http://www.dawghousedesignstudio.com/wp-content/uploads/2010/01/25/free-stock-photos-1.jpg */
 .slide:nth-of-type(2){
 	background-color: orange;
   background-image: url('/store/Images/mudhut/Mudhut10.jpg');
 }
 
-/* http://www.stockfreeimages.com/static/homepage/waterfall-free-stock-photo-244915.jpg */
 .slide:nth-of-type(3){
 	background-color: green;
   background-image: url('/store/Images/mudhut/Mudhut12.jpg');
@@ -279,3 +287,4 @@ just for appearance; change whatever you want
   z-index: 10;
   font-size: 0px;
 }
+*/
