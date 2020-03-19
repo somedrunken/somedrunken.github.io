@@ -16,47 +16,26 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/store/index.html">Home</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#About">The Mudhut</a></li>
-        <li><a href="/store/hall.html">The Hall</a></li>
-        <li><a href="/store/school.html">School</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">History
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/store/history/historyDistrict.html">Brief History of the District</a></li>
-            <li><a href="/store/history/historyPaddleSteamers.html">History of Paddle Steamers in the Nangiloc District</a></li>
-            <li><a href="/store/history/historySchools.html">History of the Schools of the Nangiloc District</a></li>
-            <li><a href="/store/history/historyIrrrigation.html">History of Irrigation in the Nangiloc District</a></li>
-            <li><a href="/store/history/historySurroundingStations.html">History of the Surrounding Stations</a></li>
-            <li><a href="#">Reminiscences of "Charley" Thompson of Kulkyne - 1850s to 1920s</a></li>
-            <li><a href="#">Reminiscences of John Sandland - Manager of Mildura Station 1868 - 1874</a></li>
-            <li><a href="#">Recollections of Jim Gibbs 1921-1967</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!--Navigation bar-->
 
-   <div class="hero-image">
+<div id="nav-placeholder">
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
+
+<!--end of Navigation bar-->
+
+ <div class="hero-image">
   <div class="hero-text">
     <h1>This is colignan</h1>
     <p>Come for a visit</p>
-
-  </div>
+     </div>
 </div>
+
 
  <div id="About" class="container text-left">
   <h3>Colignan Recreation Community Reserve</h3>
