@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>user@home > newtab</title>
+
+  <style>
+    html {
+      align-items: center;
+      background-color: #f7eee4;
+      color: #c5c8c6;
+      display: flex;
+      font: 22px/1 "Inconsolata", monospace;
+      height: 100%;
+      justify-content: center;
+    }
+
+    body {
+      background-color: #1d1f21;
+      border-radius: 2px;
+      box-shadow: 1px 1px 6px #1d1f2187;
+      color: #c5c8c6;
+      display: flex;
+      flex-direction: column;
+      min-height: 30ch;
+      min-width: 50vw;
+      padding: 2em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p span {
+      color: #b5bd68;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      column-gap: 2em;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 1em 0;
+    }
+
+    ul:nth-child(1n) li:first-child {
+      color: #a54242;
+    }
+
+    ul:nth-child(2n) li:first-child {
+      color: #de935f;
+    }
+    
+    ul:nth-child(3n) li:first-child {
+      color: #f0c674;
+    }
+    
+    ul:nth-child(4n) li:first-child {
+      color: #8c9440;
+    }
+
+    ul:nth-child(5n) li:first-child {
+      color: #85678f;
+    }
+
+    li:first-child {
+      font-weight: bold;
+    }
+
+    li:last-child {
+      margin: 0 0 1em;
+    }
+
+    p #cursor {
+      background-color: #b5bd68;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0; }
+      49% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <p><span>sam@t480s ></span>newtab</p>
+
+  <nav>
+    <ul>
+      <li>server</li>
+      <li><a href="https://192.168.2.150:8006/#v1:0:=lxc%2F100:4:2:::::5"></a>promox</li>
+      <li><a href="http://192.168.2.128:32400/web/index.html#">plex</a></li>
+      <li><a href="http://192.168.2.130/admin/index.php">piHole</a></li>
+      <li><a href="http://pi.hole/admin/api.php?disable=300&auth=2170a761688faea7fd1572cf6bf028fde22f1ef470e8b4ec71805a78bd1bb6e2">piHole Disable</a></li>
+    </ul>
+
+    <ul>
+      <li>learning</li>
+      <li><a href="https://my.unisa.edu.au/student/portal/">unisa</a></li>
+      <li><a href="https://www.netacad.com/">netcad</a></li>
+      <li><a href="https://remotelab.unisa.edu.au/">netlab+</a></li>
+      
+    </ul>
+
+    <ul>
+      <li>home</li>
+      <li><a href="https://weboas.is/">web</a></li>
+      <li><a href="https://github.com/">github</a></li>
+      <li><a href="https://www.howtoforge.com/">howtoforge</a></li>
+      <li><a href="https://www.ozbargain.com.au/">ozbargain</a></li>
+    </ul>
+
+    <ul>
+      <li>sites</li>
+      <li><a href="https://www.reddit.com/"></a>reddit</li>
+      <li><a href="https://www.reddit.com/r/unixporn/">unixPorn</a></li>
+      <li><a href="https://www.omgubuntu.co.uk/">omgubuntu</a></li>
+      <li><a href="https://distrowatch.com/">distrowatch</a></li>
+      <li><a href="https://mail.google.com/mail/u/0/#inbox">gmail</a></li> 
+          
+      
+    </ul>
+  </nav>
+
+  <p><span>sam@t480s > </span> <span id="cursor">_</span></p>
+</body>
+</html>
