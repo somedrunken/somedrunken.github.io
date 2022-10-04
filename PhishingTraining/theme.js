@@ -1,0 +1,6 @@
+if(!window.savedStore) {
+  window.savedStore = {}
+}
+
+
+window.savedStore.theme = {"backgroundColor":"#ffffff","buttonBackgroundColor":"#004c97","buttonBorderRadius":0,"buttonOutline":false,"buttonShadow":false,"buttonShape":"pill","useLargeButton":false,"buttonTextColor":"#ffffff","buttonHover":"","fontFamilies":[],"fontFamily":"Poppins","fontSizes":{"Large screen":16,"Medium screen":16,"Small screen":16},"headerBackgroundColor":"#ffffff","headerTextColor":"#004c97","highContrast":false,"backButton":true,"progressBar":true,"recoloredChameleonImages":{"https://v2.chameleoncreator.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcXc3IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2045a4a633e9d4026cf9253d03e6a38acc6b896/Avatar_confused_man.svg":"#ff9e1b"},"textColor":"#000000","topicMenu":true,"useImagePreloader":true,"userPalette":["#004c97","#58595b","#00b2a9","#ffffff","#555e69","#ff9e1b","#e5edf4","#f7e9ea","#87189d"],"menu":{"Menu background colour":"#fff","Menu text and close colour":"#000","Menu text hover colour":"#0000ff","Menu text active colour":"#ff0000"},"headings":{"h1":1,"h2":1,"h3":1,"h4":1,"h5":1,"h6":1},"links":{"link":"#0000ff","visited":"#800080","hover":"#0000ff","focus":"#e59700","active":"#ff0000"}};
