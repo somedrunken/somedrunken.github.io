@@ -1,0 +1,6 @@
+if(!window.savedStore) {
+  window.savedStore = {}
+}
+
+
+window.savedStore.theme = {"backgroundColor":"#fff","buttonBackgroundColor":"#00b2a9","buttonBorderRadius":0,"buttonOutline":false,"buttonShadow":false,"buttonShape":"pill","useLargeButton":false,"buttonTextColor":"#fff","buttonHover":"","fontFamilies":[],"fontFamily":"Poppins","fontSizes":{"Large screen":16,"Medium screen":16,"Small screen":16},"highContrast":false,"recoloredChameleonImages":{"https://v2.chameleoncreator.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcXhBIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fab87f128b631b475aa4886f486631a99e8315fd/Blonde.svg":"#ff9e1b"},"textColor":"#060709","useImagePreloader":true,"userPalette":["#00b2a9","#ffffff","#272930","#ff9e1b","#87189d","#004c97","#d9d9d6","#e1f8f6","#f7e9f9","#e9eef5"],"menu":{"Menu background colour":"#ffffff","Menu text and close colour":"#000000","Menu text hover colour":"#0000ff","Menu text active colour":"#ff0000"},"headings":{"h1":1,"h2":1,"h3":1,"h4":1,"h5":1,"h6":1},"links":{"link":"#0000ff","visited":"#800080","hover":"#0000ff","focus":"#e59700","active":"#ff0000"},"linksSecondary":{"link":"#0000ff","visited":"#800080","hover":"#0000ff","focus":"#e59700","active":"#ff0000"},"headerBackgroundColor":"#fff","headerTextColor":"#53565a","progressBar":true,"topicMenu":true};
