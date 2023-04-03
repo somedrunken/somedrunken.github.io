@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>Sunraysia Septics</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .contact-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+  </style>
+  
   <script>
     $(document).ready(function() {
       setTimeout(function() {
@@ -13,6 +23,15 @@
       }, 1000);
     });
   </script>
+  <style>
+    .smooth-transition {
+      transition: background-color 0.3s ease;
+    }
+  
+    .smooth-transition:hover {
+      background-color: #6e6e64;
+    }
+  </style>
   
   <style>
     .fade-in-text {
@@ -24,10 +43,16 @@
     }
     
 	</style> 
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light text-center smooth-transition" style="background-color: #8f8f89;">
         <div class="col-md-12">
             <div class="card bg-secondary">
                 <div class="card-body">
@@ -40,7 +65,7 @@
     </div>
   </div>
   
-  	 	<div class="row">
+  <div class="row my-4">
     <div class="col-md-4">
         <img src="/MilduraSeptic/images/PooMan.png" alt="image">
     </div>
@@ -61,7 +86,7 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-md-12">
-          <div class="card text-center bg-secondary">
+        <div class="card text-center smooth-transition" style="background-color: #8f8f89;">
               <div class="card-body">
                   <h5 class="card-title">
                     For more information on our septic tank cleanings or to schedule an appointment, call us today on:
