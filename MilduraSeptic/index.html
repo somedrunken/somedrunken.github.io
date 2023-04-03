@@ -34,6 +34,14 @@
     padding: 1rem;
   }
 </style>
+<style>
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+</style>
 
   </head>
 
@@ -117,6 +125,33 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.13.0/dist/umd/popper.min.js" integrity="sha384-7/r/QaIk6UJH5LrVz/mj1gwQhKjG/v5pj5Vr/rO+3q3Zr2lJ/gWjRkzIxr+vEuM8V" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        var target = this.hash;
+        $('html, body').animate(
+          {
+            scrollTop: $(target).offset().top,
+          },
+          800
+        );
+      });
+    });
+  </script>
+ <script>
+  window.onscroll = function() {stickyHeader()};
+  var navbar = document.querySelector(".navbar");
+  var sticky = navbar.offsetTop;
+
+  function stickyHeader() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
   
 </body>
 
