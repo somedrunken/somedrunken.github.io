@@ -31,12 +31,11 @@
     transition: all 0.3s ease;
   }
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-  }
+  .sticky-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 </style>
 
   
@@ -46,7 +45,7 @@
   <div class="container-fluid">
     <div class="row my-2">
       <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light text-center smooth-transition sticky" style="background-color: #8f8f89;">
+        <nav class="navbar navbar-expand-lg navbar-light text-center smooth-transition sticky-navbar" style="background-color: #8f8f89;">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html" style="color: black; font-size: 24px; font-weight: bold;">R & W Septic Tank Cleaning</a>
@@ -63,9 +62,9 @@
     </div>
   </div>
 
-<div class="row my-2">
+  <div class="row my-2">
     <div class="col-md-4">
-    <img src="/MilduraSeptic/images/PooMan.png" alt="R & W Septic Tank Cleaning Logo" class="img-fluid">
+    <img src="/MilduraSeptic/images/PooMan.png" alt="R & W Septic Tank Cleaning Logo" class="img-fluid" style="width: 80%;">
     </div>
     <div class="col-md-6 fade-in-text">
   	
@@ -79,6 +78,7 @@
     <p class="card-text">•	Portaloos</p>
 	</div>
 </div>
+
 
 <div class="container-fluid">
   <div class="row my-2">
@@ -140,10 +140,7 @@
   <script>
     $(document).ready(function(){$('a[href^="#"]').on('click',function(event){event.preventDefault();var target=this.hash;$('html, body').animate({scrollTop:$(target).offset().top,},800)})})
   </script>
- <script>
- window.onscroll=function(){stickyHeader()};var navbar=document.querySelector(".navbar");var sticky=navbar.offsetTop;function stickyHeader(){if(window.pageYOffset>=sticky){navbar.classList.add("sticky")}else{navbar.classList.remove("sticky")}}
-</script>
- 
+  
 </body>
 
 </html>
